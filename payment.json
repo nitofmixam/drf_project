@@ -1,0 +1,38 @@
+[
+  {
+    "model": "users.payment",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "payment_date": "2001-01-01",
+      "course": 2,
+      "lesson": 1,
+      "total_price": 5000,
+      "payment_method": "Наличные"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 2,
+    "fields": {
+      "user": 1,
+      "payment_date": "2001-02-02",
+      "course": 2,
+      "lesson": 2,
+      "total_price": 6000,
+      "payment_method": "Visa"
+    }
+  },
+  {
+    "model": "users.payment",
+    "pk": 3,
+    "fields": {
+      "user": 1,
+      "payment_date": "2001-03-03",
+      "course": 2,
+      "lesson": 3,
+      "total_price": 7000,
+      "payment_method": "Наличные"
+    }
+  }
+]
