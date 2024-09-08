@@ -17,6 +17,7 @@ class Course(models.Model):
         blank=True,
         null=True,
     )
+    amount = models.PositiveIntegerField(verbose_name="Цена", **NULLABLE)
 
     def __str__(self):
         return self.title
@@ -41,6 +42,7 @@ class Lesson(models.Model):
         blank=True,
         null=True,
     )
+    amount = models.PositiveIntegerField(verbose_name="Цена", **NULLABLE)
 
     def __str__(self):
         return self.title

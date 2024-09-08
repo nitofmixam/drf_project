@@ -6,17 +6,19 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 from users.apps import UsersConfig
-from users.views import UserViewSet, PaymentLiatAPIView
+from users.views import UserViewSet, PaymentLiatAPIView, PaymentCreateAPIView
 
 app_name = UsersConfig.name
 router = DefaultRouter()
 router.register(r"user", UserViewSet, basename="user")
 
 urlpatterns = [
-                  path("payments/", PaymentLiatAPIView.as_view(), name="payments"),
+                  path("payments/", PaymentLiatAPIView.as_view(),
+                       name="payments"),
                   path(
                       "token/",
-                      TokenObtainPairView.as_view(permission_classes=[AllowAny]),
+                      TokenObtainPairView.as_view(
+                          permission_classes=[AllowAny]),
                       name="token_obtain_pair",
                   ),
                   path(
@@ -24,4 +26,6 @@ urlpatterns = [
                       TokenRefreshView.as_view(permission_classes=[AllowAny]),
                       name="token_refresh",
                   ),
+                  path("payment/create/", PaymentCreateAPIView.as_view(),
+                       name="payment_create"),
               ] + router.urls

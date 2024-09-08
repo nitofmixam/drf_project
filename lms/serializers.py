@@ -10,7 +10,7 @@ class LessonSerializer(ModelSerializer):
     class Meta:
         model = Lesson
         fields = "__all__"
-        validators = [LinkValidator(field='url')]
+        validators = [LinkValidator(field="url")]
 
 
 class CourseSerializer(ModelSerializer):
@@ -28,7 +28,7 @@ class CourseSerializer(ModelSerializer):
         return 0
 
     def get_subscribe(self, instance):
-        request = self.context.get('request')
+        request = self.context.get("request")
         user = None
 
         if request:
@@ -39,4 +39,4 @@ class CourseSerializer(ModelSerializer):
 class SubscribeSerializer(ModelSerializer):
     class Meta:
         model = Subscribe
-        fields = '__all__'
+        fields = "__all__"

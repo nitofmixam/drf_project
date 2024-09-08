@@ -8,5 +8,5 @@ class LinkValidator:
 
     def __call__(self, value):
         result = value.get(self.field)
-        if result and not result.startswith('https://www.youtube.com/'):
-            raise ValidationError(f'{self.field} must be a valid URL.')
+        if result and not result.startswith("https://www.youtube.com/"):
+            raise ValidationError(f"{self.field} must be a valid URL.")
