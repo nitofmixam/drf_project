@@ -67,16 +67,14 @@ class PaymentCreateAPIView(CreateAPIView):
             course_product = create_stripe_product(
                 Course.objects.get(pk=course_id).title
             )
-            course_price = create_stripe_price(instance.course.amount,
-                                               course_product)
+            course_price = create_stripe_price(instance.course.amount, course_product)
             session_id, payment_link = create_stripe_session(course_price)
 
         else:
             lesson_product = create_stripe_product(
                 Lesson.objects.get(pk=lesson_id).title
             )
-            lesson_price = create_stripe_price(instance.lesson.amount,
-                                               lesson_product)
+            lesson_price = create_stripe_price(instance.lesson.amount, lesson_product)
             session_id, payment_link = create_stripe_session(lesson_price)
 
         instance.session_id = session_id
