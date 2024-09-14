@@ -119,10 +119,15 @@ CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
 CELERY_BACKEND_URL = os.getenv("CELERY_BACKEND_URL")
 CELERY_BEAT_SCHEDULE = {
     "send reminder": {
-        "task": "user.tasks.check_last_login",
+        "task": "users.tasks.check_last_login",
         "schedule": timedelta(seconds=10),
     },
 }
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'UTC'
+CELERY_ENABLE_UTC = True
+
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
