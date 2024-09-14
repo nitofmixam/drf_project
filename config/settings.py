@@ -115,8 +115,8 @@ SIMPLE_JWT = {
 
 STRIPE_API_KEY = os.getenv("STRIPE_API_KEY")
 
-CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
-CELERY_BACKEND_URL = "redis://127.0.0.1:6379/0"
+CELERY_BROKER_URL = os.getenv("CELERY_BROKER_URL")
+CELERY_BACKEND_URL = os.getenv("CELERY_BACKEND_URL")
 CELERY_BEAT_SCHEDULE = {
     "send reminder": {
         "task": "user.tasks.check_last_login",
